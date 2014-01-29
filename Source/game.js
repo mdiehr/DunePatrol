@@ -5,9 +5,9 @@
 // This file is part of Perlenspiel. 
 
 // Please fill out these comments with the appropriate information.
-//     Project Title:	
-//            Author:	
-//              Date:	
+//     Project Title:	Dune Patrol
+//            Author:	D'Juan Irvin
+//              Date:	1/29/14
 
 /* Project notes:
     You can include project notes, messages, instructions, and TODOs here if you wish.
