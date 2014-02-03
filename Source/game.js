@@ -10,22 +10,24 @@
 //            Author:	Mark Diehr
 //              Date:	1/29/14
 
-var GAME_OBJECT;
+var GAME;
 
 // PS.init( system, options )
 // Initializes the game
 PS.init = function (system, options) {
 	"use strict";
 	PS.statusText("Dune Patrol");
-	GAME_OBJECT = new Screen(15, 9, 0x99CCFF);
-	GAME_OBJECT.children.push(new Ground(0, 5, 15, 4, 0xE6B85C));
-	GAME_OBJECT.Go();
+	GAME = new Screen(32, 20, 0x99CCFF);
+	GAME.addChild(new Ground(0, 16, 32, 4, 0xE6B85C));
+	GAME.addChild(new DuneBuggy(3, 14));
+	GAME.go();
 };
 
 // PS.touch ( x, y, data, options )
 // Called when the mouse button is clicked on a bead, or when a bead is touched
 PS.touch = function (x, y, data, options) {
 	"use strict";
+	GAME.touch(x, y);
 };
 
 // PS.release ( x, y, data, options )
@@ -56,12 +58,14 @@ PS.exitGrid = function (options) {
 // Called when a key on the keyboard is pressed
 PS.keyDown = function (key, shift, ctrl, options) {
 	"use strict";
+	GAME.keyDown(key);
 };
 
 // PS.keyUp ( key, shift, ctrl, options )
 // Called when a key on the keyboard is released
 PS.keyUp = function (key, shift, ctrl, options) {
 	"use strict";
+	GAME.keyUp(key);
 };
 
 // PS.input ( sensors, options )
