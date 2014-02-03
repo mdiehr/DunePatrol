@@ -39,7 +39,7 @@ BulletUp.prototype.Update = function() {
 		this.y--;
 	}
 
-	if(this.x < 0 || this.x + this.w >= GAME.w || this.y < 0 || this.y + this.h >= GAME.h)
+	if(this.x < 0 || this.x + this.w > GAME.w || this.y < 0 || this.y + this.h > GAME.h)
 		this.deleteMe = true;
 	
 	this.time++;
