@@ -57,7 +57,6 @@ DuneBuggy.prototype.Update = function() {
 	}
 
 	if (this.time >= 0 && this.time % this.shootTime === 0) {
-
 		if(GAME.getKey(32) === 1) {
 			GAME.addChild(new BulletSide(this.x+this.w, this.y));
 			GAME.addChild(new BulletUp(this.x, this.y-1));

@@ -24,10 +24,6 @@ Screen.prototype.stop = function() {
 	}
 }
 
-Screen.prototype.addChild = function(object) {
-	this.children.push(object);
-}
-
 Screen.prototype.keyDown = function(key) {
 	this.keys[key] = 1;
 }
