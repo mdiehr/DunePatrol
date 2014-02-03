@@ -17,6 +17,10 @@ Entity.prototype.impart = function(childConstructor) {
 	childConstructor.prototype.constructor = childConstructor;
 }
 
+Entity.prototype.addChild = function(object) {
+	this.children.push(object);
+}
+
 Entity.prototype._tick = function() {
 	this._update();
 	this._draw();

@@ -18,8 +18,10 @@ Screen.prototype.go = function() {
 }
 
 Screen.prototype.stop = function() {
-	if (this.timerIdentifier !== null)
+	if (this.timerIdentifier !== null) {
 		PS.timerStop(this.timerIdentifier);
+		this.timerIdentifier = null;
+	}
 }
 
 Screen.prototype.addChild = function(object) {
