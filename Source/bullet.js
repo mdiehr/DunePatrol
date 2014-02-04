@@ -2,10 +2,10 @@
 var Bullet = function(x, y, dx, dy) {
 	Entity.call(this, x, y, 1, 1, "Bullet");
 	this.animation = new Animation(1, 1, 2
-		, [0x0, 0xFF0000, 0xFFAA00]
+		, [0x0, 0xFF0000, 0xFFAA00, 0xFFFFFF]
 		, [["∗"], ["※"]]
 		, [["1"], ["2"]]
-		, [["0"], ["0"]]
+		, [["3"], ["3"]]
 		);
  	this.animationDelay = 3;
  	this.moveDelay = 2;
