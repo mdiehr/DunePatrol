@@ -12,12 +12,14 @@
 
 var GAME;
 
+var SKY_COLOR = 0x99CCFF;
+
 // PS.init( system, options )
 // Initializes the game
 PS.init = function (system, options) {
 	"use strict";
 	PS.statusText("Dune Patrol");
-	GAME = new Screen(32, 20, 0x99CCFF);
+	GAME = new Screen(32, 20, SKY_COLOR);
 	GAME.addChild(new Ground(0, 16, 32, 4, 0xE6B85C));
 	GAME.addChild(new DuneBuggy(3, 14));
 	GAME.go();

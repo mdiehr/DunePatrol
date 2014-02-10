@@ -3,7 +3,7 @@
 var Ground = function(x, y, w, h, color) {
 	Entity.call(this, x, y, w, h, "Ground");
 	this.color = color;
-	this.moveDelay = 79;
+	this.spawnDelay = 51;
 }
 
 Entity.prototype.impart(Ground);	// Inherit from Entity
@@ -18,7 +18,12 @@ Ground.prototype.Draw = function(offsetX, offsetY) {
 
 
 Ground.prototype.Update = function() {
-	if (this.time >= 0 && this.time % this.moveDelay === 0) {
-		GAME.addChild(new Cactus(GAME.w-1, GAME.h-2-PS.random(5), -1, 0));
+	if (this.time >= 0) {
+		if (this.time % this.spawnDelay === 0) {
+			if(PS.random(2) == 1)
+				GAME.addChild(new Cactus(this.w-1, this.y-PS.random(3)));
+			else
+				this.addChild(new Hole(GAME.w-1, 0));
+		}
 	}
 }

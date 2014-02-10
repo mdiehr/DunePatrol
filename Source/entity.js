@@ -29,13 +29,11 @@ Entity.prototype.contains = function(x, y) {
 
 Entity.prototype._tick = function() {
 	this._update();
-	this._draw();
+	this._draw(0, 0);
 }
 
 // Draw self and all children with an offset
 Entity.prototype._draw = function(offsetX, offsetY) {
-	offsetX = option(offsetX, 0);
-	offsetY = option(offsetY, 0);
 	this.Draw(offsetX, offsetY);
 	var x = this.x + offsetX;
 	var y = this.y + offsetY;
@@ -61,17 +59,8 @@ Entity.prototype._update = function() {
 }
 
 Entity.prototype.Draw = function(offsetX, offsetY) {
-	if(this.animation !== null) {
+	if(this.animation !== null)
 		this.animation.render(this.x + offsetX, this.y + offsetY);
-	} else {
-		var x = this.x + offsetX;
-		var y = this.y + offsetY;
-		PS.glyph(		x, y, "?");
-		PS.glyphColor(	x, y, 0x000000);
-		PS.color(		x, y, 0xFFFFFF);
-		PS.border(		x, y, 4);
-		PS.borderColor(	x, y, 0xFF0000);
-	}
 }
 
 Entity.prototype.Update = function() {
